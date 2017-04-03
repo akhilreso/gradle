@@ -59,7 +59,7 @@ public class ScriptPluginFactorySelector implements ScriptPluginFactory {
                                ClassLoaderScope baseScope, boolean topLevelScript) {
         ScriptPlugin scriptPlugin = scriptPluginFactoryFor(scriptSource.getFileName())
             .create(scriptSource, scriptHandler, targetScope, baseScope, topLevelScript);
-        return new BuildOperationScriptPlugin(scriptPlugin, buildOperationExecutor);
+        return scriptPlugin;
     }
 
     private ScriptPluginFactory scriptPluginFactoryFor(String fileName) {
